@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perspective Helper</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="empty"></div>
+        <a href="./">
+            <h1>PERSPECTIVE HELPER</h1>
+        </a>
+
+        <div class="empty"></div>
+    </header>
+    <div id="help">
+
+        <div id="instructions">
+            <h2>Generate your own 1, 2 and 3-point perspective grids!</h2>
+            <p>1 - Draw 2 lines to determine a vanishing point</p>
+            <p>2 - <a  class = "button-instruction">Generate Vanishing Lines</a> from the point</p>
+            <p>3 - Repeat 1 & 2, or <a class="button-instruction"> Draw verticals/horizontals</a> to complete your grid</p>
+            <p>4 - <a class= "button-instruction"> Download Grid</a> to use as a working layer for your art!</p>
+        </div>
+
+        <div id="upload-box">
+            <label for="reference-image-input">Upload reference file</label>
+            <input type="file" 
+                   name="reference-image-input" 
+                   id="reference-image-input" 
+                   accept="image/png, image/gif, image/jpeg"> 
+        </div>
+        <div id="controls">
+
+
+            <div id="customisation-controls">
+            <input type="color" name="color-picker" id="color-picker" value = "#00FF00">
+
+                <label id = "line-density-label" for="line-density-slider">Line Density: 25</label>
+                <input type="range" name="line-density-slider" id="line-density-slider"  value=25 min=5 max =100 step=5 >
+            </div>
+
+            <div id="function-controls">
+                <button onclick="undo()">Undo <br>drawn line</button>
+                <button onclick="clearCanvas(perspectiveCanvas)">Clear All <br>Grid Lines</button>
+                
+                <!-- <input type="range" name="vertical-line-slider" id="vertical-line-slider" min = 5 max = 50 step = 5> -->
+                <!-- <button id = "diagonalLineButton" onclick="drawDiagonalLines()">Draw Diagonals</button> -->
+                <!-- <input type="range" name="diagonal-line-slider" id="diagonal-line-slider" min = 0 max = 180 step = 1> -->
+                <!-- <input type="range" name="horizontal-line-slider" id="horizontal-line-slider" min = 5 max = 50 step = 5> -->
+                <button id ="hide-image-button" onclick="hideImage(this)">Hide <br> Image</button>
+                <button id="download-canvas-button"  download="grid.png">Download<br>Perspective Grid</button>
+                <button id="generate-vanashing-lines" onclick="generateVanishingLines()">Generate <br>Grid Lines</button>
+                <button id = "verticalLineButton" onclick="drawVerticalLines()">Draw <br>Verticals</button> 
+                <button id = "horizontalLineButton" onclick="drawHorizontalLines()">Draw <br>Horizontals</button>
+            </div>
+        </div>
+        <p id="current-vanishing-point">Draw First Line.</p>
+
+
+
+    </div>
+
+
+
+    <main>
+
+        <img id = "reference-image" src="images/2pp drawing 1024 576.jpg" alt="">
+        <div id="canvas-container">
+            <canvas width = "1024px" height = "576px"  class="canvas" id = "reference-image-canvas"></canvas>
+            <canvas width = "1024px" height = "576px"  class = "canvas" id="guide-canvas"></canvas>
+            <canvas width = "1024px" height = "576px"  class = "canvas" id="perspective-lines-canvas"></canvas>
+        </div>
+
+    </main>
+
+    
+
+    <script src="index.js" defer></script>
+</body>
+</html>
+
+<!-- ADD cut planes in half trainer -->

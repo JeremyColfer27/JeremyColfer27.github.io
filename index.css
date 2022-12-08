@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    width: 100vw;
+
+    background-color: rgb(235, 235, 235);
+}
+
+body{
+    width: 100vw;
+    margin: auto;
+    
+    /* outline: green 1px solid; */
+    font-family: 'Manrope', sans-serif;
+    background: rgb(255, 255, 255);
+
+}
+header{
+    padding-top: 1vh;
+    display: grid;
+    display: flex;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 5px 3px rgba(128, 128, 128, 0.759);
+    margin-bottom: 2vh;
+}
+
+.empty{
+    width: 100%;
+    max-width: 100%;
+    border: red 0px solid;
+    border-bottom: rgb(255, 255, 255) 3px solid;
+
+}
+header>a{
+    text-decoration: none;
+}
+
+h1{
+    color: rgb(0, 0, 0);
+    /* text-shadow: 0px 1px rgba(0, 0, 0, 0.719); */
+    margin: auto;
+    width: fit-content;
+    border-bottom:  3px solid;
+    white-space: nowrap;
+    font-family: 'Manrope', sans-serif;
+    text-align: center;
+    padding:0 10px 1vh 10px;
+    padding-bottom: 1vh;
+}
+#help{
+    color: rgb(0, 0, 0);
+    padding-left:2%;
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+}
+#help h2{
+    border-bottom: 2px solid;
+}
+
+#instructions{
+    width: fit-content;
+    text-align: left;
+}
+
+.button-instruction{
+    font-style: italic;
+    text-decoration: underline;
+}
+#upload-box{
+    text-align: center;
+    padding-left: 2%;
+    margin:auto;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    outline:black solid;
+    width: fit-content;
+}
+#upload-box>{
+    display: block;
+}
+
+
+main{
+
+    margin: auto;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5% 2% 2% 2%;
+    }
+#canvas-container{
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    box-shadow: 0px 0px 3px 2px rgb(126, 126, 126);
+}
+#canvas-container>canvas{
+    transition: 0.2s;
+}
+
+#canvas-container:hover{
+    cursor: url("pen.png"), auto;
+}
+
+#reference-image{
+    position: absolute;
+    display: block;
+    z-index: 0;
+}
+
+#reference-image-canvas{
+    background-color:  none;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+#perspective-lines-canvas{
+    position: absolute;
+    background-color:  none;
+    top:0%;
+    left:0%;
+    z-index: 2;
+    opacity: 0.9;
+}
+
+
+#guide-canvas{
+    position: absolute;
+    top:0%;
+    left:0%;
+    opacity: 0.5;
+    background: rgba(255, 0, 0, 0);
+    /* background: rgba(255, 0, 0, 0.323); */
+    z-index: 3;
+}
+
+#controls{
+    margin-top: 2%;
+}
+
+#function-controls{
+    display: flex;
+    justify-content: center;
+    gap:2px;
+}
+
+#customisation-controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1em;
+    margin-bottom: 0.5em;
+}
+ 
+#customisation-controls>input{
+}
+button{
+    background: white;
+
+    padding:0.5em;
+    /* border-radius: 1em; */
+    border: 2px solid black;
+    
+}
+
+button:hover{
+    cursor: pointer;
+    transition:0.15s;
+    border:rgb(91, 220, 255) 2px solid;
+    box-shadow: 0 0 1px 1px rgb(91, 220, 255);
+}
+
