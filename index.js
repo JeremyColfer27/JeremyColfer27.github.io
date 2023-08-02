@@ -420,7 +420,11 @@ function drawStandardizedRadialLines(vp, density, length){
     console.log(angles);
     let radialDrawer = new lineDrawer(perspectiveCanvas, perspectiveCtx, currentColor);
     //draw density lines between a1 and a2
-    let increment = Math.abs(angles[1] - angles[0]) / (density+0.00);
+    //let increment = Math.abs(angles[1] - angles[0]) / (density+0.00); 
+    //unexpectedly divides increment by 10 resulting in 10 times as many radial lines drawn
+    //Why it occurs, I've no clue. But if you knew i'd giver a £10er to you ;)
+    
+    let increment = Math.abs((angles[1] - angles[0]) / density+0.0);
     for(let d = angles[0]; d <= angles[1]; d+= increment){
         let radialEnpointX = vp.x + length * Math.cos(d);
         let radialEnpointY = vp.y + length * Math.sin(d);
